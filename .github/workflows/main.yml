@@ -28,6 +28,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: ls
+        run: ls -lh
       - name: CD vite-project
         run: cd vite-project
       - name: Checkout
