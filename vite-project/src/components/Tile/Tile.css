@@ -1,0 +1,125 @@
+.tile_container.work{
+    --bg-color: var(--work);
+}
+.tile_container.play{
+    --bg-color: var(--play);
+}
+.tile_container.study{
+    --bg-color: var(--study);
+}
+.tile_container.study{
+    --bg-color: var(--study);
+}
+.tile_container.exercise{
+    --bg-color: var(--exercise);
+}
+.tile_container.social{
+    --bg-color: var(--social);
+}
+.tile_container.self-care{
+    --bg-color: var(--self-care);
+}
+
+.tile_container {
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    position: relative;
+    padding-top: 40px;
+    overflow: hidden;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width:100%;
+    cursor: pointer;
+
+}
+.tile_container__tile{
+    background-color: var(--dark-blue);
+    position: relative;
+    z-index: 1;
+
+    /* border-radius: inherit inherit 0 0; */
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    padding:1em 1.5em;
+    color:#fff;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: var(--transition);
+}
+
+.tile_container:hover .tile_container__tile{
+    background-color: var(--desaturated-blue);
+    /* filter:brightness(1.8); */
+}
+
+
+.tile_container__header{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tile_container__title{
+}
+
+.tile_container__option{
+    color:var(--pale-blue);
+    transition: var(--transition);
+}
+.tile_container__option:hover{
+    color:#fff;
+}
+
+
+
+.tile_container__times{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.tile_container__curr_time{
+    font-size:1.5em;
+    font-weight: 300;
+}
+.tile_container__prev_time{
+    color:var(--pale-blue);
+    font-size:0.6em;
+}
+
+.tile_container__logo{
+    width:4em;
+    position: absolute;
+    top:-10px;
+    right:10px;
+    z-index: 0;
+}
+
+@media screen and (min-width:1050px) {
+
+    .tile_container{
+        width: var(--card-width);
+
+    }
+.tile_container__tile{
+    gap:1em;
+}
+    .tile_container__times{
+        flex-direction: column;
+        align-items: start;
+    }
+    .tile_container__curr_time{
+        font-size:3em;
+    }
+}
