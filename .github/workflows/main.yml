@@ -36,14 +36,15 @@ jobs:
           node-version: 20
           cache: 'npm'
           cache-dependency-path: 'vite-project/package-lock.json'
-      - name: CD vite-project
-        run: cd vite-project
-      - name: ls
-        run: ls -lh
+      
       - name: Install dependencies
-        run: npm ci
+        run: |
+          cd vite-project
+          npm ci
       - name: Build
-        run: npm run build
+        run: |
+          cd vite-project
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
