@@ -32,14 +32,14 @@ jobs:
         uses: actions/checkout@v4
       - name: ls
         run: ls -lh
-      - name: CD vite-project
-        run: cd vite-project
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
           cache-dependency-path: 'vite-project/package-lock.json'
+      - name: CD vite-project
+        run: cd vite-project
       - name: Install dependencies
         run: npm ci
       - name: Build
